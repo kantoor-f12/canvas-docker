@@ -68,7 +68,7 @@ COPY --chown=canvasuser assets/development-local.rb config/environments/developm
 COPY --chown=canvasuser assets/outgoing_mail.yml config/outgoing_mail.yml
 COPY assets/healthcheck.sh /usr/local/bin/healthcheck.sh
 
-RUN for config in amazon_s3 delayed_jobs domain file_store security external_migration \
+RUN for config in amazon_s3 delayed_jobs domain file_store security external_migration dynamic_settings \
        ; do cp config/$config.yml.example config/$config.yml \
        ; done
 
